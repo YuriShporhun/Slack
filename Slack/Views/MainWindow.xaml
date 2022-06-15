@@ -18,11 +18,13 @@
     </i:Interaction.Behaviors>
     <Grid VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
-            
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <controls:WindowHeader Height="49" Grid.Row="0" Background="#1D1C1F"/>
+        <controls:WindowHeader Height="49" Grid.Row="0" Grid.ColumnSpan="3"  Background="#1D1C1F"/>
     </Grid>
 </Window>

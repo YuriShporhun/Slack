@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Slack.UI.WPF.ViewModels;
 using Slack.UI.WPF.Views;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace Slack
 
         private static void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IMainWindowViewModel, MainWindowViewModel>();
             services.AddSingleton<MainWindow>();
         }
 
