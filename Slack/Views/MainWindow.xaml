@@ -25,6 +25,9 @@
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <controls:WindowHeader Height="49" Grid.Row="0" Grid.ColumnSpan="3"  Background="#1D1C1F"/>
+
+        <controls:WindowHeader
+            CloseCommand="{Binding CloseWindowCommand}"
+            Height="49" Grid.Row="0" Grid.ColumnSpan="3" Background="#1D1C1F"/>
     </Grid>
 </Window>

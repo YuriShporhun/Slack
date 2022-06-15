@@ -3,10 +3,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:Slack.UI.WPF.Controls">
 
-    
+
     <Style TargetType="{x:Type local:WindowHeader}">
         <Style.Resources>
-            <Style x:Key="SystemButton" TargetType="local:RoundedButton">
+            <Style x:Key="SystemButton" TargetType="local:SystemButton">
                 <Setter Property="Width" Value="12"></Setter>
                 <Setter Property="Height" Value="12"></Setter>
                 <Setter Property="Margin" Value="8 18 0 18"></Setter>
@@ -22,9 +22,13 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
                         <StackPanel Orientation="Horizontal">
-                            <local:RoundedButton Background="{StaticResource CloseWindowButtonColor}" Style="{StaticResource SystemButton}" />
-                            <local:RoundedButton Background="{StaticResource MinimizeWindowButtonColor}" Style="{StaticResource SystemButton}"/>
-                            <local:RoundedButton Background="{StaticResource MaximizeWindowButtonColor}" Style="{StaticResource SystemButton}"/>
+                            <local:SystemButton 
+                                OnClick="{Binding CloseCommand, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
+                                ButtonType="CloseButton" 
+                                Background="{StaticResource CloseWindowButtonColor}" 
+                                Style="{StaticResource SystemButton}"/>
+                            <local:SystemButton ButtonType="MinimizeButton" Background="{StaticResource MinimizeWindowButtonColor}" Style="{StaticResource SystemButton}"/>
+                            <local:SystemButton ButtonType="MaximizeButton" Background="{StaticResource MaximizeWindowButtonColor}" Style="{StaticResource SystemButton}"/>
                         </StackPanel>
                     </Border>
                 </ControlTemplate>
@@ -32,16 +36,14 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type local:RoundedButton}">
+    <Style TargetType="{x:Type local:SystemButton}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type local:RoundedButton}">
-                    <Button  Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}">
+                <ControlTemplate TargetType="{x:Type local:SystemButton}">
+                    <Button Command="{Binding OnClick, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"  Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
-                                <Grid>
-                                    <Ellipse Fill="{TemplateBinding Background}"/>
-                                </Grid>
+                                <Ellipse Fill="{TemplateBinding Background}"/>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
