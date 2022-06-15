@@ -1,0 +1,28 @@
+﻿<Window x:Class="Slack.UI.WPF.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Slack"
+        xmlns:controls= "clr-namespace:Slack.UI.WPF.Controls"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:b="clr-namespace:Slack.UI.WPF.Behaviours"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Height="450" 
+        Width="1920">
+    <i:Interaction.Behaviors>
+        <b:DragMoveBehavior/>
+    </i:Interaction.Behaviors>
+    <Grid VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <controls:WindowHeader Height="49" Grid.Row="0" Background="#1D1C1F"/>
+    </Grid>
+</Window>
