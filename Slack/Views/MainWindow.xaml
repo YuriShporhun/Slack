@@ -4,9 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Slack"
-        xmlns:controls= "clr-namespace:Slack.UI.WPF.Controls"
+        xmlns:controls="clr-namespace:Slack.UI.WPF.Controls"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:b="clr-namespace:Slack.UI.WPF.Behaviours"
+        xmlns:viewmodels="clr-namespace:Slack.UI.WPF.ViewModels"
+        xmlns:views="clr-namespace:Slack.UI.WPF.Views"
         mc:Ignorable="d"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
@@ -30,11 +32,26 @@
 
         <controls:WindowHeader
             CloseCommand="{Binding CloseWindowCommand}"
-            Grid.Row="0" Grid.ColumnSpan="3" Background="#1D1C1F"/>
+            Grid.Row="0" 
+            Grid.ColumnSpan="3" 
+            Background="#1D1C1F"/>
 
         <controls:LeftPanel
-            Grid.Row="1" Grid.Column="0" Background="#151521" />
+            Grid.Row="1" 
+            Grid.Column="0" 
+            Background="#151521" />
 
-        <controls:DashBoard />
+        <controls:DashBoard 
+            Grid.Row="1" 
+            Grid.Column="1" 
+            Background="#151521" />
+
+        <ContentControl Grid.Row="1" Grid.Column="2" Content="{Binding CurrentViewModel}">
+            <ContentControl.Resources>
+                <DataTemplate  DataType="{x:Type viewmodels:ChatWindowViewModel}">
+                    <views:ChatWindow/>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
     </Grid>
 </Window>

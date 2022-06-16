@@ -9,13 +9,26 @@ namespace Slack.UI.WPF.ViewModels
     public interface IMainWindowViewModel { }
     public class MainWindowViewModel : Bindable, IMainWindowViewModel
     {
-        public Bindable? CurrentViewModel { get; set; }
-
+        private Bindable? _currentViewModel;
         private readonly IServiceProvider _serviceProvider;
+
+        public Bindable? CurrentViewModel 
+        { 
+            get
+            {
+                return _currentViewModel;
+            }
+            set
+            {
+                _currentViewModel = value;
+                OnPropertyChanged();
+            }
+        }
+
         public MainWindowViewModel(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
-            CurrentViewModel = _serviceProvider.GetService<IPeopleWindowViewModel>() as Bindable;
+            CurrentViewModel = _serviceProvider.GetService<IChatWindowViewModel>() as Bindable;
             InitCommands();
         }
 

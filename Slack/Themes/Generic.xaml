@@ -55,9 +55,13 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:LeftPanel}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
+                    <Border Background="{TemplateBinding Background}">
+                        <Border.BorderBrush>
+                            #B4B4B4
+                        </Border.BorderBrush>
+                        <Border.BorderThickness>
+                            0 0 1 0
+                        </Border.BorderThickness>
                         <StackPanel>
                             <Border Margin="0 17 0 0" Background="White" Width="40" Height="40" CornerRadius="3">
                                 <Ellipse>
@@ -81,9 +85,56 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:DashBoard}">
+                    <Border
+                        VerticalAlignment="Top"
+                        Background="#151521">
+                        <local:UserPanel Background="{TemplateBinding Background}"></local:UserPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:ChatHeader}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ChatHeader}">
                     <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}" 
+                            Padding="0">
+                        <Border.BorderBrush>
+                            #B4B4B4
+                        </Border.BorderBrush>
+                        <Border.BorderThickness>
+                            0 0 1 0
+                        </Border.BorderThickness>
+                        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+                            <Border Margin="24 12 16 0" CornerRadius="2" Background="White" Width="40" Height="40"/>
+                            <TextBlock Margin="0 16 2 0" FontWeight="Bold" FontSize="20" Foreground="#ADADAD" Text="Yuri Shporkhun"/>
+                            <local:SystemButton VerticalAlignment="Top" Margin="0 25 16 0" Background="#2ACB42" Width="12" Height="12"></local:SystemButton>
+                            <TextBlock Foreground="#5D5D5D" FontSize="12"  Margin="0 23 6 0">Available</TextBlock>
+                            <Image VerticalAlignment="Top" Margin="0 26 0 0" Stretch="None" Source="/Assets/Icons/imac.png"></Image>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:UserPanel}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:UserPanel}">
+                    <Border 
+                        Height="120"
+                        Background="{TemplateBinding Background}">
+                        <Border.BorderBrush>
+                            #B4B4B4
+                        </Border.BorderBrush>
+                        <Border.BorderThickness>
+                            1
+                        </Border.BorderThickness>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

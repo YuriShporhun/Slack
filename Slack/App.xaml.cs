@@ -28,6 +28,7 @@ namespace Slack
         private static void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IMainWindowViewModel, MainWindowViewModel>();
+            services.AddTransient<IChatWindowViewModel, ChatWindowViewModel>();
             services.AddSingleton<MainWindow>();
         }
 
