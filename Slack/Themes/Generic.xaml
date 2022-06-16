@@ -3,7 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:Slack.UI.WPF.Controls">
 
-
     <Style TargetType="{x:Type local:WindowHeader}">
         <Style.Resources>
             <Style x:Key="SystemButton" TargetType="local:SystemButton">
@@ -47,6 +46,45 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:LeftPanel}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:LeftPanel}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <StackPanel>
+                            <Border Margin="0 17 0 0" Background="White" Width="40" Height="40" CornerRadius="3">
+                                <Ellipse>
+                                    <Ellipse.Fill>
+                                        <LinearGradientBrush>
+                                            <GradientStop Color="#601FD2" Offset="1.0" />
+                                            <GradientStop Color="#2D68F6" Offset="0" />
+                                        </LinearGradientBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </Border>
+                            <Border Margin="0 17 0 0" Background="White" Width="40" Height="40" CornerRadius="3"></Border>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:DashBoard}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:DashBoard}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

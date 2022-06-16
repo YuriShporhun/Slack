@@ -11,23 +11,30 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Height="450" 
+        Height="1060" 
         Width="1920">
     <i:Interaction.Behaviors>
         <b:DragMoveBehavior/>
     </i:Interaction.Behaviors>
     <Grid VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="64"></ColumnDefinition>
+            <ColumnDefinition Width="284"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="49"></RowDefinition>
+            <RowDefinition Height="1032"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
         </Grid.RowDefinitions>
 
         <controls:WindowHeader
             CloseCommand="{Binding CloseWindowCommand}"
-            Height="49" Grid.Row="0" Grid.ColumnSpan="3" Background="#1D1C1F"/>
+            Grid.Row="0" Grid.ColumnSpan="3" Background="#1D1C1F"/>
+
+        <controls:LeftPanel
+            Grid.Row="1" Grid.Column="0" Background="#151521" />
+
+        <controls:DashBoard />
     </Grid>
 </Window>
