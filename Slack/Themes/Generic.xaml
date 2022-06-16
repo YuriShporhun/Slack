@@ -135,6 +135,7 @@
                         <Border.BorderThickness>
                             1
                         </Border.BorderThickness>
+                        <TextBlock Margin="20 13 0 0" FontSize="16" Foreground="#F2F2F2">YuriSp</TextBlock>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
