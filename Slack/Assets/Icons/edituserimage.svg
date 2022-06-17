@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="68" height="68" viewBox="0 0 68 68">
+  <defs>
+    <filter id="Эллипс_1" x="0" y="0" width="68" height="68" filterUnits="userSpaceOnUse">
+      <feOffset dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-color="#282828" flood-opacity="0.502"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Сгруппировать_10" data-name="Сгруппировать 10" transform="translate(18 14)">
+    <g transform="matrix(1, 0, 0, 1, -18, -14)" filter="url(#Эллипс_1)">
+      <circle id="Эллипс_1-2" data-name="Эллипс 1" cx="16" cy="16" r="16" transform="translate(18 14)" fill="#fff"/>
+    </g>
+    <path id="edit" d="M7.439,11.738,6.3,14.671l2.883-1.193-1.74-1.74Zm8.367-6.265-.366-.366a1.034,1.034,0,0,0-1.463,0l-.732.732,1.829,1.829.732-.732A1.034,1.034,0,0,0,15.807,5.473ZM7.5,11.588l.262-.262,1.829,1.829L14.71,8.034,12.881,6.205l.366-.366Zm6.317,4.183-8.808,0,0-8.808,6.167,0,.966-1.024H4.482a.517.517,0,0,0-.517.517v9.829a.517.517,0,0,0,.517.517h9.829a.517.517,0,0,0,.517-.517V9.014l-1.042,1.023.028,5.735Z" transform="translate(6.035 5.196)" fill="#181b1e"/>
+  </g>
+</svg>

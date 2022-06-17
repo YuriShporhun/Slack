@@ -8,18 +8,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Icons\cogwheel.png" />
+    <None Remove="Assets\Icons\edituserimage.svg" />
     <None Remove="Assets\Icons\imac.png" />
+    <None Remove="Assets\Icons\threadsicon.svg" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+    <PackageReference Include="SharpVectors" Version="1.7.7" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Icons\cogwheel.png" />
+    <Resource Include="Assets\Icons\edituserimage.svg" />
     <Resource Include="Assets\Icons\imac.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\threadsicon.svg" />
   </ItemGroup>
 
 </Project>
