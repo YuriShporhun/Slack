@@ -11,6 +11,7 @@
     <None Remove="Assets\Icons\cogwheel.png" />
     <None Remove="Assets\Icons\edituserimage.svg" />
     <None Remove="Assets\Icons\imac.png" />
+    <None Remove="Assets\Icons\mentionsicon.svg" />
     <None Remove="Assets\Icons\threadsicon.svg" />
   </ItemGroup>
 
@@ -26,6 +27,7 @@
     <Resource Include="Assets\Icons\imac.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\mentionsicon.svg" />
     <Resource Include="Assets\Icons\threadsicon.svg" />
   </ItemGroup>
 
