@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Slack.UI.WPF.Services.Abstract;
+using Slack.UI.WPF.Services.Implementations;
 using Slack.UI.WPF.ViewModels;
 using Slack.UI.WPF.Views;
 using System;
@@ -21,6 +23,7 @@ public class Startup
     {
         _serviceCollection.AddTransient<IMainWindowViewModel, MainWindowViewModel>();
         _serviceCollection.AddTransient<IChatWindowViewModel, ChatWindowViewModel>();
+        _serviceCollection.AddSingleton<INavigationService, NavigationService>();
         _serviceCollection.AddSingleton<MainWindow>();
         return _serviceProvider;
     }

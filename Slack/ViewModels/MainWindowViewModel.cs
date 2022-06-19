@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Slack.UI.WPF.Commands.MainWindow;
 using Slack.UI.WPF.Core;
+using Slack.UI.WPF.Services.Abstract;
 using System;
-using System.Windows;
 using System.Windows.Input;
 
 namespace Slack.UI.WPF.ViewModels
@@ -9,44 +9,21 @@ namespace Slack.UI.WPF.ViewModels
     public interface IMainWindowViewModel { }
     public class MainWindowViewModel : Bindable, IMainWindowViewModel
     {
-        private Bindable? _currentViewModel;
-        private readonly IServiceProvider _serviceProvider;
+        private readonly INavigationService _navigationService;
+        public Bindable? CurrentViewModel => _navigationService.CurrentViewModel;
 
-        public Bindable? CurrentViewModel 
-        { 
-            get
-            {
-                return _currentViewModel;
-            }
-            set
-            {
-                _currentViewModel = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public MainWindowViewModel(IServiceProvider serviceProvider)
+        public MainWindowViewModel(INavigationService navigationService)
         {
-            _serviceProvider = serviceProvider;
-            CurrentViewModel = _serviceProvider.GetService<IChatWindowViewModel>() as Bindable;
-            InitCommands();
+            CloseWindowCommand = new CloseWindowCommand();
+            _navigationService = navigationService;
+            _navigationService.OnViewModelChanged += OnViewModelChanged;
         }
 
-        public ICommand? CloseWindowCommand { get; set; }
-
-        private void InitCommands()
+        private void OnViewModelChanged()
         {
-            CloseWindowCommand = new RelayCommand(CloseWindowCommandExecute, CloseWindowCommandCanExecute); 
+            OnPropertyChanged(nameof(CurrentViewModel));
         }
 
-        private void CloseWindowCommandExecute(object obj)
-        {
-            Application.Current.MainWindow.Close();
-        }
-
-        private bool CloseWindowCommandCanExecute(object obj)
-        {
-            return true;
-        }
+        public ICommand CloseWindowCommand { get; set; }
     }
 }
