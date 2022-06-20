@@ -3,6 +3,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:Slack.UI.WPF.Controls"
     xmlns:svgc="http://sharpvectors.codeplex.com/svgc/">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Components/WindowHeader.xaml"/>
+        <ResourceDictionary Source="/Components/UserPanel.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type local:SystemButton}">
         <Setter Property="Template">
@@ -94,53 +98,6 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type local:UserPanel}">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type local:UserPanel}">
-                    <Border
-                        Height="120"
-                        Background="{TemplateBinding Background}">
-                        <Border.BorderBrush>
-                            #B4B4B4
-                        </Border.BorderBrush>
-                        <Border.BorderThickness>
-                            1
-                        </Border.BorderThickness>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="48" />
-                                <RowDefinition Height="90" />
-                            </Grid.RowDefinitions>
-
-                            <DockPanel Grid.Row="0">
-                                <TextBlock DockPanel.Dock="Left" Margin="20 13 0 0" FontSize="16" Foreground="#F2F2F2">YuriSp</TextBlock>
-                                <Image VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 19 15 0" Width="12" Height="12" DockPanel.Dock="Right" Source="/Assets/Icons/cogwheel.png"></Image>
-                            </DockPanel>
-                            
-                            <Grid Grid.Row="1" Margin="16 0 0 0" VerticalAlignment="Top">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="48" />
-                                    <ColumnDefinition Width="140" />
-                                    <ColumnDefinition Width="25" />
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Border Grid.Column="0" CornerRadius="2" Margin="0 11 0 0" Background="White" Width="48" Height="48" />
-                                <StackPanel Grid.Column="1" Margin="11 10 0 0">
-                                    <TextBlock Foreground="#F2F2F2" FontWeight="Medium" FontSize="20">Yuri Sporkhun</TextBlock>
-                                    <TextBlock Foreground="#F2F2F2" FontSize="12">WPF developer</TextBlock>
-                                </StackPanel>
-                                <local:SystemButton Margin="0 20 0 0" Grid.Column="2" VerticalAlignment="Top" Background="#2ACB42" Width="12" Height="12"></local:SystemButton>
-                                <Image HorizontalAlignment="Center" Grid.Column="3" Width="32" Height="32" Source="{svgc:SvgImage Source=/Assets/Icons/edituserimage.svg}"/>
-                            </Grid>
-                          
-                        </Grid>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
     <Style TargetType="{x:Type local:UserActivitiesList}">
         <Setter Property="Template">
             <Setter.Value>
@@ -151,7 +108,7 @@
                             #B4B4B4
                         </Border.BorderBrush>
                         <Border.BorderThickness>
-                            1 0 1 1
+                            0.5 0 0.5 0.5
                         </Border.BorderThickness>
                         <StackPanel>
                             <StackPanel Orientation="Horizontal" Height="40">
@@ -161,6 +118,10 @@
                             <StackPanel Orientation="Horizontal" Height="40">
                                 <Image Margin="14 12 10 0" VerticalAlignment="Top" Width="16" Height="16" Source="{svgc:SvgImage Source=/Assets/Icons/mentionsicon.svg}"/>
                                 <TextBlock Margin="0 8 0 0" Foreground="#ADADAD" FontSize="16">Mentions &amp; reactions</TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="40">
+                                <Image Margin="14 12 10 0" VerticalAlignment="Top" Width="16" Height="16" Source="{svgc:SvgImage Source=/Assets/Icons/draftsicon.svg}"/>
+                                <TextBlock Margin="0 8 0 0" Foreground="#ADADAD" FontSize="16">Drafts</TextBlock>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Height="40">
                                 <Image Margin="14 12 10 0" VerticalAlignment="Top" Width="16" Height="16" Source="{svgc:SvgImage Source=/Assets/Icons/threadsicon.svg}"/>

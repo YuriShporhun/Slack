@@ -1,8 +1,5 @@
 ﻿using Slack.UI.WPF.Core;
 using Slack.UI.WPF.Services.Abstract;
-using Slack.UI.WPF.ViewModels;
-using System;
-using System.Reflection;
 
 namespace Slack.UI.WPF.Commands
 {

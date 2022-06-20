@@ -1,7 +1,6 @@
 ﻿using Slack.UI.WPF.Commands.MainWindow;
 using Slack.UI.WPF.Core;
 using Slack.UI.WPF.Services.Abstract;
-using System;
 using System.Windows.Input;
 
 namespace Slack.UI.WPF.ViewModels
