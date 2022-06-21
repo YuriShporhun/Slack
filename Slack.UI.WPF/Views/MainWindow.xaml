@@ -15,6 +15,8 @@
         ResizeMode="NoResize"
         Height="1060" 
         Width="1920">
+    <Window.Resources>
+    </Window.Resources>
     <i:Interaction.Behaviors>
         <b:DragMoveBehavior/>
     </i:Interaction.Behaviors>
