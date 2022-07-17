@@ -33,4 +33,8 @@
     <Resource Include="Assets\Icons\threadsicon.svg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>
